@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn {
+          @apply bg-teal-700 text-white px-4 py-2 rounded-lg;
+        }
+      }
+    </style>
+
+    <title>Travel Recommendation</title>
+  </head>
+  <body>
+    <header class="bg-sky-900 text-white px-12 max-w-full">
+      <nav class="container flex items-center ">
+        <a href="./travel_recommendation.html" class="text-lg"
+          >Travel<span class="font-bold">Lx</span>
+        </a>
+        <ul class="flex gap-4 font-semibold ml-auto">
+          <li><a href="./travel_recommendation.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+        <div
+          class="search ml-auto my-2 rounded-full flex gap-6 bg-white h-full text-black p-2.5"
+        >
+          <input class=" " type="text" placeholder="Enter a destination or keyword" />
+          <button>🔍</button>
+          <div class="gap-2">
+            <button class="btn">Search</button>
+            <button class="btn">Clear</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    
+  </body>
+</html>
