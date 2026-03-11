@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style type="text/tailwindcss">
       @layer components {
         .btn {
-          @apply bg-teal-700 text-white px-4 py-2 rounded-lg;
+          @apply bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-all duration-300;
         }
       }
     </style>
@@ -16,7 +23,7 @@
   </head>
   <body>
     <header class="bg-sky-900 text-white px-12 max-w-full">
-      <nav class="container flex items-center ">
+      <nav class="container flex items-center">
         <a href="./travel_recommendation.html" class="text-lg"
           >Travel<span class="font-bold">Lx</span>
         </a>
@@ -26,19 +33,47 @@
           <li><a href="/">Contact</a></li>
         </ul>
         <div
-          class="search ml-auto my-2 rounded-full flex gap-6 bg-white h-full text-black p-2.5"
+          class="search ml-auto my-2 rounded-full flex gap-6 bg-white h-full text-black px-3 py-2"
         >
-          <input class=" " type="text" placeholder="Enter a destination or keyword" />
+          <input
+            id="conditionInput"
+            type="text"
+            placeholder="Enter a destination or keyword"
+          />
           <button>🔍</button>
           <div class="gap-2">
-            <button class="btn">Search</button>
-            <button class="btn">Clear</button>
+            <button id="btnSearch" class="btn">Search</button>
+            <button id="btnClear" class="btn">Clear</button>
           </div>
         </div>
       </nav>
     </header>
 
+    <section
+      class="h-screen bg-cover bg-center bg-[image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url('./hero-img.jpg')] flex flex-col justify-center items-start"
+    >
+      <div class="text-white flex items-start gap-4 ">
+        <div class="social flex flex-col gap-12 self-center ml-2 mr-12">
+          <i class="fa-brands fa-twitter fa-2xl"></i>
+          <i class="fa-brands fa-facebook-f fa-2xl"></i>
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+          <i class="fa-brands fa-youtube fa-2xl"></i>
+        </div>
 
-    
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-6xl font-bold">
+            Explore Dream Destinations
+          </h1>
+          <p class="text-lg max-w-2xl">
+            The travel recommendations app helps users discover their ideal
+            travel destinations based on their preferences and interests. It
+            allows users to input their desired travel dates, budget, and
+            interests, and then provides personalized recommendations for
+            destinations, activities, and accommodations.
+          </p>
+          <button class="btn">Book Now</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

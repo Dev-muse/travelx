@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn {
+          @apply bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-all duration-300;
+        }
+        .badge{
+          @apply bg-teal-700 text-white px-4 py-1 text-sm font-bold rounded-full hover:bg-teal-800 transition-all duration-300;
+        }
+        .member{
+          @apply  align-baseline p-4 flex flex-col gap-2 items-center h-32;
+        }
+      }
+    </style>
+
+    <title>Travel Recommendation</title>
+  </head>
+  <body>
+    <header class="bg-sky-900 text-white px-12 max-w-full">
+      <nav class="container max-w-2xl flex items-center gap-x-96 py-4">
+        <a href="./travel_recommendation.html" class="text-lg"
+          >Travel<span class="font-bold">Lx</span>
+        </a>
+        <ul class="flex gap-4 font-semibold">
+          <li><a href="./travel_recommendation.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      class="h-screen bg-cover bg-center bg-[image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url('./hero-img.jpg')] flex flex-col justify-center items-start"
+    >
+      <section class="text-white flex items-start gap-4 ml-6 mr-12">
+        <section class="social flex flex-col gap-12 self-center ml-2 mr-12">
+          <i class="fa-brands fa-twitter fa-2xl"></i>
+          <i class="fa-brands fa-facebook-f fa-2xl"></i>
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+          <i class="fa-brands fa-youtube fa-2xl"></i>
+        </section>
+
+        <div class="space-y-6">
+          <section class="about space-y-6">
+            <h1 class="text-4xl md:text-6xl font-bold">About Us</h1>
+            <p class="text-lg max-w-2xl">
+              Welcome to the company, we are a group of passionate travel
+              enthusiasts dedicated to helping you discover the perfect
+              destinations for your next adventure. Our mission is to provide
+              you with personalized travel recommendations that cater to your
+              unique preferences and interests. Whether you're seeking a
+              relaxing beach getaway, an adventurous mountain retreat, or a
+              cultural city exploration, we've got you covered.
+            </p>
+          </section>
+          <section class="team-section flex gap-4">
+            <h2 class="text-4xl font-bold">Our Team</h2>
+            <div class="members flex justify-between space-x-4 items-center">
+              <div class="member text-center flex flex-col items-center">
+                <i class="fa-solid fa-user fa-2xl mb-1"></i>
+                <h3 class="mt-2 font-bold">John Doe</h3>
+                <p class="text-sm max-w-xs ">John is responsible for the overall management and strategy of the company.</p>
+                <button class="badge">CEO</button>
+              </div>
+              <div class="member text-center flex flex-col items-center">
+                <i class="fa-solid fa-user fa-2xl mb-1"></i>
+                <h3 class="mt-2 font-bold">Celina Thomas</h3>
+                <p class="text-sm max-w-xs ">Celina is the technical and operations team</p>
+                <button class="badge">Team Lead</button>
+              </div>
+              <div class="member text-center flex flex-col items-center">
+                <i class="fa-solid fa-user fa-2xl mb-1"></i>
+                <h3 class="mt-2 font-bold">Mike Wilson</h3>
+                <p class="text-sm max-w-xs ">Mike is responsible for managing the delivery process.</p>
+                <button class="badge">Delivery Head</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
