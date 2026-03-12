@@ -87,7 +87,7 @@ function travelSearch() {
           return;
         }
         else if (["beaches", "beach"].includes(input)) {
-          const temples = data.temples;
+          const temples = data.beaches;
           const container = document.createElement("div");
           container.className =
             " text-center mx-auto gap-4 flex justify-center flex-col";
@@ -127,3 +127,9 @@ function travelSearch() {
 btnSearch.addEventListener("click", travelSearch);
 
 btnClear.addEventListener("click", clearSearch);
+
+document.getElementById("searchInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    travelSearch();
+  }
+});
