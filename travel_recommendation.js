@@ -77,9 +77,11 @@ function travelSearch() {
             resultDiv.className =
               "results display-results grid grid-cols-2 gap-8";
           }
+          return 
         }
       } else {
         resultDiv.innerHTML = "Result not found.";
+        return 
       }
     })
     .catch((error) => {
