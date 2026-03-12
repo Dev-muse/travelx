@@ -8,7 +8,7 @@ function clearSearch() {
   searchResults.innerHTML = ` `;
 }
 function travelSearch() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
+  const input = document.getElementById("searchInput").value.toLowerCase().trim();
   const resultDiv = document.getElementById("searchResult");
   homeContent.classList.add("hidden");
   resultDiv.innerHTML = "";
@@ -20,11 +20,17 @@ function travelSearch() {
   fetch("travel_recommendation_api.json")
     .then((response) => response.json())
     .then((data) => {
-      const termFound = Object.keys(data).includes(input);
-      const term = data[input];
+      const termFound = [
+        "countries",
+        "country",
+        "temples",
+        "temple",
+        "beaches",
+        "beach",
+      ].includes(input);
       if (termFound) {
-        if (input === "countries") {
-          const countries = term;
+        if (["countries", "country"].includes(input)) {
+          const countries = data.countries;
           for (let country of countries) {
             const container = document.createElement("div");
             container.className =
@@ -52,8 +58,9 @@ function travelSearch() {
 
             searchResults.classList.add("display-results");
           }
-        } else if (input === "temples" || input === "beaches") {
-          const temples = term;
+        } 
+        else if (["temples", "temple"].includes(input)) {
+          const temples = data.temples;
           const container = document.createElement("div");
           container.className =
             " text-center mx-auto gap-4 flex justify-center flex-col";
@@ -77,11 +84,38 @@ function travelSearch() {
             resultDiv.className =
               "results display-results grid grid-cols-2 gap-8";
           }
-          return 
+          return;
+        }
+        else if (["beaches", "beach"].includes(input)) {
+          const temples = data.temples;
+          const container = document.createElement("div");
+          container.className =
+            " text-center mx-auto gap-4 flex justify-center flex-col";
+          container.innerHTML += `
+            <h2 class="text-2xl font-bold mb-2 text-center capitalize">${input}</h2>
+            `;
+          const templeContainer = document.createElement("div");
+          templeContainer.className =
+            "grid grid-cols-2 justify-center items-baseline  gap-8 my-4";
+
+          for (let temple of temples) {
+            templeContainer.innerHTML += `
+              <div class="card flex flex-col  size-42">
+              <h4 class="text-lg font-bold">${temple.name}</h4>
+                <img class=" object-cover" src="./assets/${temple.imageUrl}" alt="${temple.name}" />
+                <p class="text-sm">${temple.description}</p>
+               </div>
+              `;
+            container.appendChild(templeContainer);
+            resultDiv.appendChild(container);
+            resultDiv.className =
+              "results display-results grid grid-cols-2 gap-8";
+          }
+          return;
         }
       } else {
         resultDiv.innerHTML = "Result not found.";
-        return 
+        return;
       }
     })
     .catch((error) => {
