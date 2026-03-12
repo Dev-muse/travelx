@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn {
+          @apply bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-all duration-300;
+        }
+      }
+    </style>
+
+    <title>Contact Us - Travelx</title>
+  </head>
+  <body>
+    <header class="bg-sky-900 text-white px-12 max-w-full">
+      <nav class="container max-w-2xl flex items-center gap-x-96 py-4">
+        <a href="./travel_recommendation.html" class="text-lg"
+          >Travel<span class="font-bold">Lx</span>
+        </a>
+        <ul class="flex gap-4 font-semibold">
+          <li><a href="./travel_recommendation.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href=".//contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      class="h-screen bg-cover bg-center bg-[image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url('./hero-img.jpg')] flex flex-col justify-center items-start"
+    >
+      <div class="text-white flex  ">
+        <div class="social flex flex-col gap-12 self-center ml-2 mr-12">
+          <i class="fa-brands fa-twitter fa-2xl"></i>
+          <i class="fa-brands fa-facebook-f fa-2xl"></i>
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+          <i class="fa-brands fa-youtube fa-2xl"></i>
+        </div>
+
+        <div class="flex">
+          <div class="space-y-6 mr-auto">
+            <h1 class="text-4xl md:text-6xl font-bold">Contact Us</h1>
+            <p class="text-lg max-w-2xl">
+              Get in touch with us for any inquiries or assistance. We're here
+              to help!
+            </p>
+          </div>
+          <div class="form text-white ml-48">
+            <form action="/" class="flex flex-col space-y-6">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+              placeholder="Enter Name"
+                class="block min-w-0 grow border border-white rounded-md py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+              />
+
+              <label for="Email">Email</label>
+              <input
+                id="Email"
+                type="email"
+                name="Email"
+              placeholder="Enter Email"
+                class="block min-w-0 grow border border-white rounded-md py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+              />
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                class="border border-white rounded-md"
+                placeholder="Enter your message..."
+              ></textarea>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

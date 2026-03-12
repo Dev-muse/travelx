@@ -30,13 +30,13 @@
         <ul class="flex gap-4 font-semibold ml-auto">
           <li><a href="./travel_recommendation.html">Home</a></li>
           <li><a href="./about.html">About Us</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="./contact.html">Contact</a></li>
         </ul>
         <div
           class="search ml-auto my-2 rounded-full flex gap-6 bg-white h-full text-black px-3 py-2"
         >
           <input
-            id="conditionInput"
+            id="searchInput"
             type="text"
             placeholder="Enter a destination or keyword"
           />
@@ -50,7 +50,7 @@
     </header>
 
     <section
-      class="h-screen bg-cover bg-center bg-[image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url('./hero-img.jpg')] flex flex-col justify-center items-start"
+      class="h-screen bg-cover bg-center bg-[image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url('./assets/hero-img.jpg')] flex flex-col justify-center items-start"
     >
       <div class="text-white flex items-start gap-4 ">
         <div class="social flex flex-col gap-12 self-center ml-2 mr-12">
@@ -60,7 +60,7 @@
           <i class="fa-brands fa-youtube fa-2xl"></i>
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-6" id="homeContent">
           <h1 class="text-4xl md:text-6xl font-bold">
             Explore Dream Destinations
           </h1>
@@ -73,7 +73,12 @@
           </p>
           <button class="btn">Book Now</button>
         </div>
+
+        <div class="results" id="searchResult">
+           
+        </div>
       </div>
     </section>
+    <script src="travel_recommendation.js"></script>
   </body>
 </html>
